@@ -38,7 +38,14 @@ let $ = createSnippetWithJQuery(`
 
 const templateWithJQuery = () => {
   // Solution code here...
-}
+  const template = $('#template').html();
+  starWarsPeople.forEach(value => {
+    const html = $(`<section>${template}</section>`);
+    html.find('h2').text(value.name);
+    html.find('h3').text(value.height);
+    html.find('p').text(value.eye_color);
+    $('main').append(html);
+  });
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -56,6 +63,10 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
+  for (let i = 0; i <= str.length; i++) {
+    let slice = str.slice(i);
+    result.push(slice);
+  }
   return result;
 };
 
@@ -69,6 +80,12 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    let char = arr.charAt(i);
+    result.push(char);
+  }
+  return result;
 };
 
 
@@ -116,6 +133,18 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.ingredients.forEach(ingredient => {
+    //console.log(ingredient)
+    let ingArray = ingredient.split(' ');
+    let ingredientString = '';
+    for (let i = 2; i < ingArray.length; i++) {
+      ingredientString += ingArray[i];
+      if (i !== ingArray.length -1) {
+        ingredientString += ' ';
+      }
+    }
+    result.push(ingredientString);
+  });
   return result;
 };
 
