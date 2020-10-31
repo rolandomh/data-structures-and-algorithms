@@ -46,7 +46,7 @@ const templateWithJQuery = () => {
     html.find('p').text(value.eye_color);
     $('main').append(html);
   });
-
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
