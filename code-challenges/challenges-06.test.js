@@ -71,8 +71,12 @@ let $ = createSnippetWithJQuery(`
 
 const templatingWithMustache = () => {
   // Solution code here...
-  return{{{arr}}} 
-  append.
+  const templateArr = [];
+  characters.forEach(character => {
+    let $template = $('#template').html();
+    templateArr.push(Mustache.render($template, character));
+  });
+  return templateArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -89,6 +93,11 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 
 const getCourseKeys = (obj) => {
   // Solution code here...
+  const arrayKeys = [];
+  for (let keys in obj) {
+    arrayKeys.push(keys);
+  }
+  return arrayKeys;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -100,9 +109,11 @@ Write a function named getHouses that returns a new array containing the names o
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  for (let character of arr) {
+    houses.push(character.house);
+  }
   return houses;
 };
-
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -117,7 +128,14 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-
+  for (let person of arr) {
+    if (person.name === character) {
+      if (Object.values(person.children).length > 0) {
+        return true;
+      } else {
+        return false;
+      }}}
+return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
