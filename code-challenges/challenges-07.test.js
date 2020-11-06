@@ -60,7 +60,6 @@ const forEachTwoToThe = (arr) => {
   });
   return arry;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -69,8 +68,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
- 
-return arr.map(int => Math.pow(2, int));
+ return arr.map(int => Math.pow(2, int));
 };
 
 /* ------------------------------------------------------------------------------------------------
