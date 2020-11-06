@@ -133,6 +133,7 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   // Solution code here...
+
   arr.sort((a,b) =>{
     a = a.price;
     b = b.price;
@@ -146,7 +147,6 @@ const sortByPrice = (arr) => {
   });
   return arr;
 
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
