@@ -19,8 +19,8 @@ let $ = createSnippetWithJQuery(`
 
 const changeAllClassNames = () => {
   // Solution code here...
-  $(`li[class=${this.value}]`);
 
+  $('li').addClass('fruit');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,22 +31,9 @@ Write a function named sortBackwards that takes in an array of numbers and retur
 
 const sortBackwards = (arr) => {
   // Solution code here...
-  helperArray(arr);
-  return arr;
+  return arr.sort ((a, b) => {
+    return b-a ; });
 };
-
-const helperArray = (array) => {
-  array.sort((a, b) => {
-    if (a > b) {
-      return 1;
-    } else if (a < b) {
-      return -1;
-    } else {
-      return 0;
-    }
-  });
-};
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
