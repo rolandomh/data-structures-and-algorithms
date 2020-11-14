@@ -8,20 +8,27 @@ Build a simple express server. Connect a '/hello' route that sends a greeting of
 
 const createServer = () => {
   // Solution code here...
-
   const express = require('express');
   const app = express();
-  app.get('hello', (req,res) => res.status(200).send('OH HELLO THERE'));
-  app.get('/aboutme', (req,res) => res.status(200).send ('yikes stuff and things'));
-  app.get('/favoritefoods', (req,res) => {
-    const faveFood = ['fettuccini alfredo','tapioca pudding'];
-    res.status(200).send(faveFood);
-  });
-  app.use("*", (req,res) => {
-    res.status(404).send('try again mang');
-  });
-    
 
+  app.get('/hello', (req, res) => {
+    let hell = 'hello';
+    res.status(200).send(hell);
+  });
+
+  app.get('/aboutme', (req, res) => {
+    let about = 'refactored to banana';
+    res.status(200).send(about);
+  });
+
+  app.get('/favoritefoods', (req, res) => {
+    let foody = 'my favorite food is pasta';
+    res.status(200).send(foody);
+  });
+
+  app.get('*', (req, res) => {
+    res.status(404).send('ERRONEEOUS!!');
+  });
 
   var server = app.listen(3301, function () {
     var port = server.address().port;
@@ -41,7 +48,16 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   // Solution code here...
-  let refinedCount = input.map((arr => (currentvalue, idx, arr)))
+  let n = 0;
+  input.filter( val => {
+    val.filter( val2 => {
+      if (target === val2) {
+        n++;
+      }
+    });
+  });
+  return n;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -74,10 +90,12 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
-  return input.map((subArray) => {
-    return subArray.filter(item => item % 5 === 0 && typeof item === 'number').map(goodItems => Math.pow(2,goodItems));
+  return input.map(val => {
+    let arry = val.filter(val2 => typeof(val2) ==='number' && val2 % 5 === 0);
+    let arr = arry.map(val2 => Math.pow(2, val2));
+    return arr;
   });
-
+};
 
 
 /* ------------------------------------------------------------------------------------------------
