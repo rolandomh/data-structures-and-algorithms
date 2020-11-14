@@ -24,8 +24,8 @@ let $ = createSnippetWithJQuery(`
 
 const generateSubmitButton = () => {
   // Solution code here...
-   let button = $('<button type="submit">submit</button>');
-$('form').append(button);
+  let button = $('<button>submit</button>');
+  $('section').append(button);
 
 };
 
@@ -79,7 +79,7 @@ const citiesAtoJ = (arr) => {
   });
   return newArr;
 };
-  
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
@@ -157,7 +157,7 @@ describe('Testing challenge 1', () => {
   test('It should add a submit button to the DOM', () => {
     generateSubmitButton();
     expect($('button').text()).toStrictEqual('submit');
-  })
+  });
 });
 
 describe('Testing challenge 2', () => {
@@ -257,4 +257,4 @@ xdescribe('Testing challenge 8', () => {
 
 function createSnippetWithJQuery(html){
   return cheerio.load(html);
-};
+}
