@@ -11,13 +11,12 @@ E.g. [4,2,7,5,9,2] -> 9
 const maxInArray = (arr) => {
   // Solution code here...
   //imjust gonna tell it what to do. 
-  let whatIsMV = arr.reduce((acc, val) => {
-    if(val < acc){ acc =val; 
-    }
-    return acc;
+  return arr.reduce((max, value) => {
+    if(value > max){max = value;}
+    return max;
   });
-  return whatIsMV;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
