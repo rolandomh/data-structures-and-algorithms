@@ -48,6 +48,7 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   // Solution code here...
+
   let n = 0;
   input.filter( val => {
     val.filter( val2 => {
@@ -57,6 +58,9 @@ const count = (target, input) => {
     });
   });
   return n;
+
+  let arry = /^\d{4}$/;
+  return arry.test(pin.toString())
 
 };
 

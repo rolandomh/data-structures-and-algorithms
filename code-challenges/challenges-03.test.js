@@ -19,8 +19,8 @@ let $ = createSnippetWithJQuery(`
 
 const changeAllClassNames = () => {
   // Solution code here...
-  $(`li[class=${this.value}]`)
 
+  $('li').addClass('fruit');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,22 +31,9 @@ Write a function named sortBackwards that takes in an array of numbers and retur
 
 const sortBackwards = (arr) => {
   // Solution code here...
-  helperArray(arr);
-  return arr;
+  return arr.sort ((a, b) => {
+    return b-a ; });
 };
-
-const helperArray = (array) => {
-  array.sort((a, b) => {
-    if (a > b) {
-      return 1;
-    } else if (a < b) {
-      return -1;
-    } else {
-      return 0;
-    }
-  });
-};
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -60,12 +47,7 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   // Solution code here...
-  helperArray(arr);
-  return arr;
-};
-
-const helperArray = (array) => {
-  array.sort((a, b) => {
+  arr.sort ((a, b) => {
     if (a > b) {
       return 1;
     } else if (a < b) {
@@ -74,6 +56,7 @@ const helperArray = (array) => {
       return 0;
     }
   });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,20 +67,17 @@ Write a function named sortByLength that takes in an array of strings and return
 
 const sortByLength = (arr) => {
   // Solution code here...
-};
-const sortByLength = (arr) => {
-  // Solution code here...
   helper3(arr);
   return arr;
 };
-
-let helper3 = (array) => {
-  array.sort ((a, b) => {
+const helper3 = (array) => {
+  array.sort((a, b) => {
     a = a.length;
     b = b.length;
     return a - b;
   });
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
@@ -108,22 +88,22 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
-    // Solution code here...
+  // Solution code here...
   alphaString = (arr) => {
-      alphaString.sort ((a, b) => {
-        a = a.alphabetize;
-        b = b.alphabetize;
-        if(a > b){
-          return 1;
-        } else if (a < b){
-          return -1;
-        } else {
-          return 0;
-        }
-      });
-      return arr;
-    };
+    alphaString.sort ((a, b) => {
+      a = a.alphabetize;
+      b = b.alphabetize;
+      if(a > b){
+        return 1;
+      } else if (a < b){
+        return -1;
+      } else {
+        return 0;
+      }
+    });
+    return arr;
   };
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
@@ -140,20 +120,20 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   // Solution code here...
-arr.sort((a,b) =>{
-  a = a.price;
-  b = b.price;
-  if(a > b){
-    return 1;
-  } else if (a < b){
-    return -1;
-  } else {
-    return 0;
-  }
-});
-return arr;
-git 
-};
+
+  arr.sort((a,b) =>{
+    a = a.price;
+    b = b.price;
+    if(a > b){
+      return 1;
+    } else if (a < b){
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+  return arr;
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
