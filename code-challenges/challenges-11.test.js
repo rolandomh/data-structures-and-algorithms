@@ -51,7 +51,9 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 
 const validateEmail = (email) => {
   // Solution code here...
-  let regex = /^\w+.\w+@\w+.?(com|net|org)$/;
+  //changed let to const here,, still very confused about this... 
+
+  let regex = /^\w+.\w+@\w+?.(com|net|org)$/;
   return regex.test(email);
 };
 
