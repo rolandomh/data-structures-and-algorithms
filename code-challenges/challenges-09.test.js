@@ -22,14 +22,12 @@ Next, write a function named getCurrentEvents that takes in the request and resp
 
 // Express sever here
 const createServer = () => {
-  const express=require('express');
-  const app=express();
+  const express = require('express');
+  const app = express();
 
   // Routes go here
   app.get('/events', getCurrentEvents);
-  app.get('*', (request, response) => {
-    response.status(404).send('not no but hell no');
-  });
+
   // Solution code here...
 
   var server = app.listen(3301, function () {
@@ -167,37 +165,21 @@ function getCurrentEvents(request, response){
   // Solution code here...
   response.send(mapCurrentEvents());
 }
-
 const mapCurrentEvents = () => {
-  // Solution code here...
- 
+  const arry = currentEvents.news.map(value => {
+    return new Event(value);
+  });
+  return arry;
+};
 
-
-  function getCurrentEvents(request, response){
-    try{
-      response.status(200).send(mapCurrentEvents());
-    }
-    catch(error){
-      response.status(404).send('not no but hell no');
-    }
-  };
-  
-  const mapCurrentEvents = () => {
-    const returnArray = [];
-    currentEvents.news.forEach(value => {
-      returnArray.push(new Event(value));
-    });
-    return returnArray;
-  };
-  
-  function Event(obj){
+function Event(obj){
   // Solution code here...
-  this.author = object.author;
-  this.catagories = object.catagories;
-  this.summary = object.summary;
-  this.date = object.date;
-  this.title = object.title;
-  this.img_url = object.img_url;
+  this.author = obj.author;
+  this.catagories = obj.catagories;
+  this.summary = obj.summary;
+  this.date = obj.date;
+  this.title = obj.title;
+  this.img_url = obj.img_url;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -291,10 +273,11 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
-  const backWards = str.split('');
-  const idealString = backWards.reduce((someString, b ) => {
-    return b + someString;
-  }, '');
+  str = str.split('');
+  let reverseString = str.reduce((reverse, character) => {
+    return character + reverse;
+  });
+  return reverseString;
 };
 
 /* ------------------------------------------------------------------------------------------------
